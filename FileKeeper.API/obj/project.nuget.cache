@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "tdbgpWxTmDk=",
+  "success": true,
+  "projectFilePath": "/Users/george/Desktop/project/FileKeeper/FileKeeper.API/FileKeeper.API.csproj",
+  "expectedPackageFiles": [
+    "/Users/george/.nuget/packages/core.identity/1.2.7/core.identity.1.2.7.nupkg.sha512",
+    "/Users/george/.nuget/packages/identity.core/1.2.7/identity.core.1.2.7.nupkg.sha512",
+    "/Users/george/.nuget/packages/identity.entityframeworkcore/1.2.7/identity.entityframeworkcore.1.2.7.nupkg.sha512",
+    "/Users/george/.nuget/packages/identity.stores/1.2.7/identity.stores.1.2.7.nupkg.sha512",
+    "/Users/george/.nuget/packages/microsoft.aspnetcore.openapi/10.0.12/microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+    "/Users/george/.nuget/packages/microsoft.entityframeworkcore/2.1.0/microsoft.entityframeworkcore.2.1.0.nupkg.sha512",
+    "/Users/george/.nuget/packages/microsoft.entityframeworkcore.abstractions/2.1.0/microsoft.entityframeworkcore.abstractions.2.1.0.nupkg.sha512",
+    "/Users/george/.nuget/packages/microsoft.entityframeworkcore.analyzers/2.1.0/microsoft.entityframeworkcore.analyzers.2.1.0.nupkg.sha512",
+    "/Users/george/.nuget/packages/microsoft.entityframeworkcore.relational/2.1.0/microsoft.entityframeworkcore.relational.2.1.0.nupkg.sha512",
+    "/Users/george/.nuget/packages/microsoft.netcore.platforms/1.0.1/microsoft.netcore.platforms.1.0.1.nupkg.sha512",
+    "/Users/george/.nuget/packages/microsoft.openapi/2.12.0/microsoft.openapi.2.12.0.nupkg.sha512",
+    "/Users/george/.nuget/packages/netstandard.library/1.6.0/netstandard.library.1.6.0.nupkg.sha512",
+    "/Users/george/.nuget/packages/remotion.linq/2.2.0/remotion.linq.2.2.0.nupkg.sha512",
+    "/Users/george/.nuget/packages/system.componentmodel.annotations/4.5.0/system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "/Users/george/.nuget/packages/system.interactive.async/3.1.1/system.interactive.async.3.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
