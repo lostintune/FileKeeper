@@ -10,4 +10,12 @@
       <ProjectReference Include="..\FileKeeper.Domain\FileKeeper.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="14.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Users\Queries\GetUserById\" />
+    </ItemGroup>
+
 </Project>
