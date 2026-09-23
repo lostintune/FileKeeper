@@ -1,5 +1,6 @@
 using FileKeeper.Application.Common.Exceptions;
 using FileKeeper.Application.Common.Interfaces;
+using FileKeeper.Application.Common.Interfaces.Users;
 using FileKeeper.Application.Users.Common;
 using MediatR;
 

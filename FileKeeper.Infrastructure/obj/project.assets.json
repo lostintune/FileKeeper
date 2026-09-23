@@ -848,7 +848,8 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "FileKeeper.Domain": "1.0.0",
-          "MediatR": "14.2.0"
+          "MediatR": "14.2.0",
+          "Microsoft.AspNetCore.Http.Features": "2.1.0"
         },
         "compile": {
           "bin/placeholder/FileKeeper.Application.dll": {}

@@ -1,6 +1,6 @@
 using FileKeeper.Domain.Entities;
 
-namespace FileKeeper.Application.Common.Interfaces;
+namespace FileKeeper.Application.Common.Interfaces.Users;
 
 public interface IIdentityService
 {

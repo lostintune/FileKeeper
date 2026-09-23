@@ -2,15 +2,15 @@ using FileKeeper.Domain.Exceptions.FileAccessExceptions;
 
 namespace FileKeeper.Domain.Entities;
 
-public class FileAccess
+public class FileAccessEntity
 {
     public Guid Id { get; private set; }
     public Guid UserId { get; private set; }
     public Guid FileId { get; private set; }
     
-    private FileAccess() { }
+    private FileAccessEntity() { }
     
-    public static FileAccess Create(Guid userId, Guid fileId)
+    public static FileAccessEntity Create(Guid userId, Guid fileId)
     {
         if (userId == Guid.Empty)
         {
@@ -22,7 +22,7 @@ public class FileAccess
             throw new InvalidFileAccessException("File ID is invalid");
         }
 
-        return new FileAccess
+        return new FileAccessEntity
         {
             Id = Guid.NewGuid(),
             UserId = userId,

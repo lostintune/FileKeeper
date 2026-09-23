@@ -63,7 +63,7 @@ public class FileEntity
         IsDeleted = true;
     }
 
-    public FileAccess ShareAccess(Guid userId)
+    public FileAccessEntity ShareAccess(Guid userId)
     {
         if (userId == Guid.Empty)
         {
@@ -79,7 +79,7 @@ public class FileEntity
             throw new FileAlreadyDeletedException();
         }
         
-        return FileAccess.Create(userId, Id);
+        return FileAccessEntity.Create(userId, Id);
     }
     
 }
