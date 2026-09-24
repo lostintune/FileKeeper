@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FileKeeper.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+421e8125e270c3d4983964fe831e3100f55eeb45")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9efd7d697904f406582d2b5d63a3580264bd183")]
 [assembly: System.Reflection.AssemblyProductAttribute("FileKeeper.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FileKeeper.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
