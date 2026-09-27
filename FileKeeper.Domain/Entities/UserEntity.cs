@@ -79,5 +79,20 @@ public class UserEntity
         }
         IsDeleted = true;
     }
+    
+    public static UserEntity Reconstitute(Guid id, string firstName, string lastName, string username, string email, string phoneNumber, DateTime createdAt, bool isDeleted)
+    {
+        return new UserEntity
+        {
+            Id = id,
+            FirstName = firstName,
+            LastName = lastName,
+            Username = username,
+            Email = email,
+            PhoneNumber = phoneNumber,
+            CreatedAt = createdAt,
+            IsDeleted = isDeleted
+        };
+    }
 
 }

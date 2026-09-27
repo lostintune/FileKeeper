@@ -10,5 +10,6 @@ public interface IIdentityService
     Task<UserEntity?> GetByIdAsync(Guid id);
     Task UpdateProfileAsync(UserEntity user);
     Task DeleteUserAsync(UserEntity user);
+    Task<UserEntity?> ValidateCredentialsAsync(string email, string password);
 
 }
