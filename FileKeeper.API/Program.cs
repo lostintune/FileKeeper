@@ -1,4 +1,5 @@
 using System.Text;
+using FileKeeper.API.Middleware;
 using FileKeeper.Application;
 using FileKeeper.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -45,6 +46,8 @@ public class Program
         builder.Services.AddControllers();
 
         var app = builder.Build();
+        
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

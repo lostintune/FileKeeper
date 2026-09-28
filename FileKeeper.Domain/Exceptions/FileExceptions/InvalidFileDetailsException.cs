@@ -1,6 +1,6 @@
 namespace FileKeeper.Domain.Exceptions.FileExceptions;
 
-public class InvalidFileDetailsException : Exception
+public class InvalidFileDetailsException : DomainException
 {
     public InvalidFileDetailsException(string message) : base(message)
     {

@@ -19,6 +19,11 @@ public class AppDbContext : IdentityDbContext<AppIdentityUser, IdentityRole<Guid
     {
         base.OnModelCreating(builder); 
         
+        builder.Entity<AppIdentityUser>()
+            .HasIndex(u => u.NormalizedEmail)
+            .HasDatabaseName("EmailIndex")
+            .IsUnique();
+        
         builder.Entity<FileAccessEntity>(entity =>
         {
             entity.HasIndex(fa => new { fa.UserId, fa.FileId })
