@@ -25,7 +25,7 @@ public class UnshareFileCommandHandler: IRequestHandler<UnshareFileCommand>
 
         if (file.CreatorId != request.CurrentUserId)
         {
-            throw new ForbiddenAccessException(request.FileId, request.CurrentUserId);
+            throw new ForbiddenAccessException(request.CurrentUserId, request.FileId);
         }
 
         if (!await _fileAccessRepository.HasAccessAsync(request.TargetUserId, request.FileId))

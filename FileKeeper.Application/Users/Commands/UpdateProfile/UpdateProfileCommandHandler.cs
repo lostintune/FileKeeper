@@ -23,7 +23,8 @@ public class UpdateProfileCommandHandler: IRequestHandler<UpdateProfileCommand, 
         {
             throw new UserNotFoundException(request.Id);
         }
-        if (await _identityService.UsernameExistsAsync(request.Username) && user.Username != request.Username)
+        if (!string.Equals(user.Username, request.Username, StringComparison.OrdinalIgnoreCase)
+            && await _identityService.UsernameExistsAsync(request.Username))
         {
             throw new UsernameAlreadyExistsException(request.Username);
         }

@@ -21,6 +21,18 @@ public class ExceptionHandlingMiddleware
         {
             await _next(context);
         }
+        catch (FluentValidation.ValidationException validationEx)
+        {
+            var errors = validationEx.Errors
+                .GroupBy(e => e.PropertyName)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.Select(e => e.ErrorMessage).ToArray()
+                );
+
+            context.Response.StatusCode = StatusCodes.Status400BadRequest;
+            await context.Response.WriteAsJsonAsync(new { errors });
+        }
         catch (Exception ex)
         {
             var statusCode = ex switch

@@ -1,5 +1,6 @@
 using System.Text;
 using FileKeeper.API.Middleware;
+using FileKeeper.API.Services;
 using FileKeeper.Application;
 using FileKeeper.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -15,6 +16,9 @@ public class Program
         
         builder.Services.AddApplicationServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
+        
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddScoped<CurrentUserService>();
         
         var jwtSecretKey = builder.Configuration["JwtOptions:SecretKey"]!;
 
@@ -44,6 +48,17 @@ public class Program
         builder.Services.AddOpenApi();
         
         builder.Services.AddControllers();
+        
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAngularApp", policy =>
+            {
+                policy.WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+            });
+        });
 
         var app = builder.Build();
         
@@ -56,6 +71,8 @@ public class Program
         }
 
         app.UseHttpsRedirection();
+        
+        app.UseCors("AllowAngularApp");
 
         app.UseAuthentication(); 
         app.UseAuthorization();
