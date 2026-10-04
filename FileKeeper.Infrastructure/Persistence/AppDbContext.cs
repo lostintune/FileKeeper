@@ -19,50 +19,6 @@ public class AppDbContext : IdentityDbContext<AppIdentityUser, IdentityRole<Guid
     {
         base.OnModelCreating(builder); 
         
-        builder.Entity<AppIdentityUser>()
-            .HasIndex(u => u.NormalizedEmail)
-            .HasDatabaseName("EmailIndex")
-            .IsUnique();
-        
-        builder.Entity<FileAccessEntity>(entity =>
-        {
-            entity.HasIndex(fa => new { fa.UserId, fa.FileId })
-                .IsUnique();
-
-            entity.HasOne<FileEntity>()
-                .WithMany()
-                .HasForeignKey(fa => fa.FileId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            entity.HasOne<AppIdentityUser>()
-                .WithMany()
-                .HasForeignKey(fa => fa.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
-        });
-
-        builder.Entity<FileEntity>(entity =>
-        {
-            entity.HasKey(f => f.Id);
-
-            entity.Property(f => f.Name)
-                .IsRequired()
-                .HasMaxLength(255);
-
-            entity.Property(f => f.Path)
-                .IsRequired();
-                
-            entity.HasOne<AppIdentityUser>()
-                .WithMany()
-                .HasForeignKey(f => f.CreatorId)
-                .OnDelete(DeleteBehavior.Restrict);
-            
-            entity.HasQueryFilter(f => !f.IsDeleted);
-        });
-        
-        builder.Entity<AppIdentityUser>(entity =>
-        {
-            entity.HasQueryFilter(u => !u.IsDeleted);
-        });
-        
+        builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
     }
 }
